@@ -53,7 +53,7 @@ h1 {
   padding: 0 1rem;
 }
 
-form {
+#form {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -71,7 +71,7 @@ a {
   General sections
  */
 
-section {
+.section {
   display: none;
   flex-grow: 1;
   flex-direction: column;
@@ -80,7 +80,7 @@ section {
   padding: 0 1rem 2rem 1rem;
 }
 
-section.active {
+.section.active {
   display: flex;
 }
 
@@ -148,6 +148,7 @@ ul li {
   background: var(--off-white);
   border: 1px solid #000;
   border-radius: 2rem;
+  cursor: default;
   padding: .5rem 1rem;
   width: 7rem;
 }
@@ -212,9 +213,10 @@ input:focus {
   justify-content: space-evenly;
 }
 
-.buttons button {
+.buttons > * {
   background: #1c1409;
   color: #fff;
+  cursor: default;
   border: 1px solid #000;
   font-size: 1rem;
   width: 40%;
@@ -224,7 +226,7 @@ input:focus {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.buttons button:hover {
+.buttons > *:hover {
   background-color: #fff;
   color: #000;
 }

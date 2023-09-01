@@ -12,9 +12,9 @@
   <link rel="stylesheet" href="/order.css">
 </head>
 <body>
-<form id="form">
+<main id="form">
   <h1>Order an ATSA sweatshirt!</h1>
-  <section id="one" class="active">
+  <section id="one" class="active section">
     <div class="img" id="sand">
       <img src="images/sand-sq.jpg" alt="sand">
       <h2>Sand</h2>
@@ -24,7 +24,7 @@
       <h2>Chocolate</h2>
     </div>
   </section>
-  <section id="two">
+  <section id="two" class="section">
     <div>
       <h2>What size do you want?</h2>
       <ul id="size">
@@ -49,59 +49,59 @@
       <button id="proceed">Proceed</button>
     </div>
   </section>
-  <section id="three">
+  <form class="section" id="three">
     <div>
       <h2>What is your full name?</h2>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" required>
     </div>
     <div>
       <h2>Your email?</h2>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" required>
     </div>
     <div>
       <h2>And your phone?</h2>
-      <input type="tel" id="phone" name="phone" required>
+      <input type="tel" id="phone" required>
     </div>
     <div class="buttons">
-      <button id="back2">Back</button>
-      <button id="proceed2">Proceed</button>
+      <div id="back2">Back</div>
+      <button type="submit">Proceed</button>
     </div>
-  </section>
-  <section id="four">
+  </form>
+  <form class="section" id="four">
     <div>
       <h2>Do you need shipping?</h2>
     </div>
     <div class="buttons">
-      <button id="noShipping">No, I'll pick it up</button>
+      <div id="noShipping">No, I'll pick it up</div>
     </div>
     <div>
       <h2>Or, enter your address:</h2>
       <p>Please contact us for the shipping costs!</p>
-      <input type="text" id="address1" placeholder="Address line 1*" name="address1" required>
+      <input type="text" id="address1" placeholder="Address line 1*" required>
       <br>
-      <input type="text" id="address2" placeholder="Address line 2" name="address2">
+      <input type="text" id="address2" placeholder="Address line 2">
       <br>
-      <input type="text" id="address3" placeholder="Address line 3" name="address3">
+      <input type="text" id="address3" placeholder="Address line 3">
     </div>
     <div class="buttons">
-      <button id="back3">Back</button>
+      <div id="back3">Back</div>
       <button id="yesShipping">Proceed</button>
     </div>
-  </section>
-  <section id="five">
+  </form>
+  <form id="five" class="section">
     <h2>
       Please pay $22<span id="shipping"> + shipping</span> through either venmo <a href="https://account.venmo.com/u/dippin_deets">@utdatsa</a> or zelle at
       <a href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiQURISVRIWUEiLCJ0b2tlbiI6IjQyNTU1OTE2ODQifQ==">(425) 559-1684</a>, and attach a screenshot of the confirmation.
     </h2>
     <div>
-      <input type="file" accept="image/png, image/jpeg" name="confirmation">
+      <input type="file" accept="image/png" id="confirmation" required>
     </div>
     <div class="buttons">
       <button id="back4">Back</button>
       <button type="submit" id="order">Place my order!</button>
     </div>
-  </section>
-</form>
+  </form>
+</main>
 <script src="order.js"></script>
 </body>
 </html>

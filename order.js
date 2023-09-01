@@ -54,7 +54,7 @@ $('back2').addEventListener('click', e => {
   $('two').classList.add('active');
 });
 
-$('proceed2').addEventListener('click', e => {
+$('three').addEventListener('submit', e => {
   e.preventDefault();
   $('three').classList.remove('active');
   $('four').classList.add('active');
@@ -70,17 +70,17 @@ $('back3').addEventListener('click', e => {
 
 $('noShipping').addEventListener('click', e => {
   e.preventDefault();
+  // CLear the address because they don't want shipping
+  $('address1').value = "";
+  $('address2').value = "";
+  $('address3').value = "";
   $('shipping').classList.add('hide');
   $('four').classList.remove('active');
   $('five').classList.add('active');
 });
 
-$('yesShipping').addEventListener('click', e => {
+$('four').addEventListener('submit', e => {
   e.preventDefault();
-  if ($('address1').value.trim().length === 0) {
-    alert('Please enter a shipping address!');
-    return;
-  }
   $('shipping').classList.remove('hide');
   $('four').classList.remove('active');
   $('five').classList.add('active');
@@ -94,13 +94,28 @@ $('back4').addEventListener('click', e => {
   $('five').classList.remove('active');
 });
 
-$('order').addEventListener('click', e => {
+const toBase64 = file => new Promise((resolve, reject) => {
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = () => resolve(reader.result);
+  reader.onerror = reject;
+});
+
+$('five').addEventListener('submit', async e => {
   e.preventDefault();
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxnlcVuSxtIijViM9KyjuHdXCQ8vcG8OW1fivF_aXyKPiGkCccbiMfxfc58KraPP5aZ/exec';
-  let requestBody = new FormData($form);
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzB5oy3b1EHC2GsBwSbf9IGKKO1SbsVv1fjZf-2zbqMR9NUpBB8GPRBM2ZLoQZuFrUR/exec';
+  let requestBody = new FormData();
   requestBody.set('color', $form.dataset.color);
   requestBody.set('size', document.querySelector('#size .selected').innerText);
   requestBody.set('number', $('count').innerText);
+  requestBody.set('name', $('name').value);
+  requestBody.set('email', $('email').value);
+  requestBody.set('phone', $('phone').value);
+  requestBody.set('address1', $('address1').value);
+  requestBody.set('address2', $('address2').value);
+  requestBody.set('address3', $('address3').value);
+  // requestBody.set('confirmation', (await toBase64($('confirmation').files[0])).toString());
+  requestBody.set('confirmation', '123');
   console.log(requestBody)
   fetch(scriptURL, { method: 'POST', body: requestBody})
     .then(response => {
