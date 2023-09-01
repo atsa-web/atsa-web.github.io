@@ -105,7 +105,7 @@ $('five').addEventListener('submit', async e => {
   e.preventDefault();
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxCnPa5ZkYijB-dCC1TJfPca87KRptdw35mrvRQ-rk0lIFs1J3rJQwb-FGOQEPeasDD/exec';
   let requestBody = new FormData();
-  if (!!$form.dataset.color) {
+  if (!$form.dataset.color) {
     alert('There is no sweatshirt color chosen! Please refresh the page and try again.');
     return;
   }
