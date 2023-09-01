@@ -103,8 +103,12 @@ const toBase64 = file => new Promise((resolve, reject) => {
 
 $('five').addEventListener('submit', async e => {
   e.preventDefault();
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbx6ff6uutEOsY9T9lOFJAhcVVNsMfLerDYxKxlExrOHk1xiG_mk_MG48hi6PHJ2AqTH/exec';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxCnPa5ZkYijB-dCC1TJfPca87KRptdw35mrvRQ-rk0lIFs1J3rJQwb-FGOQEPeasDD/exec';
   let requestBody = new FormData();
+  if (!!$form.dataset.color) {
+    alert('There is no sweatshirt color chosen! Please refresh the page and try again.');
+    return;
+  }
   requestBody.set('color', $form.dataset.color);
   requestBody.set('size', document.querySelector('#size .selected').innerText);
   requestBody.set('number', $('count').innerText);
