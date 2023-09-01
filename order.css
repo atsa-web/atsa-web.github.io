@@ -213,10 +213,12 @@ input:hover, input:focus {
 }
 
 .buttons > * {
+  appearance: none;
   background: #1c1409;
   color: #fff;
   cursor: default;
   border: 1px solid #1c1409;
+  font-family: Quicksand, sans-serif;
   font-size: 1rem;
   font-weight: normal !important;
   width: 40%;
@@ -247,11 +249,14 @@ input:hover, input:focus {
 
   #one {
     flex-direction: row;
+    justify-content: center;
+    gap: 10vw;
   }
 
   .img {
-    margin: auto;
-    width: 35vw;
+    margin: auto 0;
+    width: 40vw;
+    max-width: 600px;
   }
 
   .buttons {
