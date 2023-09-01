@@ -1,6 +1,7 @@
 const $ = id => document.getElementById(id);
 const $count = $('count');
 const $form = $('form');
+const $order = $('order');
 
 $('sand').addEventListener('click', () => {
   $('form').dataset.color = 'sand';
@@ -102,8 +103,10 @@ const toBase64 = file => new Promise((resolve, reject) => {
 });
 
 $('five').addEventListener('submit', async e => {
+  $order.disabled = true;
+  $order.innerText = 'Placing...';
   e.preventDefault();
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxCnPa5ZkYijB-dCC1TJfPca87KRptdw35mrvRQ-rk0lIFs1J3rJQwb-FGOQEPeasDD/exec';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzt_7sU0_Td0CT8yoxPQF0-PUyZSYuKuBp5bvDtim4w4xdsoZftYy-uYDeeVdCLAh1X/exec';
   let requestBody = new FormData();
   if (!$form.dataset.color) {
     alert('There is no sweatshirt color chosen! Please refresh the page and try again.');
@@ -118,17 +121,25 @@ $('five').addEventListener('submit', async e => {
   requestBody.set('address1', $('address1').value);
   requestBody.set('address2', $('address2').value);
   requestBody.set('address3', $('address3').value);
-  // requestBody.set('confirmation', (await toBase64($('confirmation').files[0])).toString());
-  requestBody.set('confirmation', '123');
+  requestBody.set('confirmation', (await toBase64($('confirmation').files[0])).toString());
   console.log(requestBody);
-  fetch(scriptURL, { method: 'POST', body: requestBody})
+
+  fetch(scriptURL,
+    {
+      method: 'POST',
+      body: requestBody,
+    })
     .then(response => {
+      $order.disabled = false;
+      $order.innerText = 'Place my order!';
       $('error').style.display = 'none';
       console.log('Success!', response);
       $('five').classList.remove('active');
       $('confirmationPage').classList.add('active');
     })
     .catch(error => {
+      $order.disabled = false;
+      $order.innerText = 'Place my order!';
       $('error').innerText = 'Error: ' + error.message;
       $('error').style.display = 'block';
       console.log('Error!', error.message);

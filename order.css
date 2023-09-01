@@ -3,11 +3,6 @@
 }
 
 @font-face {
-  font-family: Lato;
-  src: url(/fonts/Lato-Regular.ttf);
-}
-
-@font-face {
   font-family: Quicksand;
   src: url(/fonts/Quicksand-Regular.ttf);
 }
@@ -191,7 +186,7 @@ input {
   transition: all .2s;
 }
 
-input:focus {
+input:hover, input:focus {
   outline: none;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -221,7 +216,7 @@ input:focus {
   background: #1c1409;
   color: #fff;
   cursor: default;
-  border: 1px solid #000;
+  border: 1px solid #1c1409;
   font-size: 1rem;
   width: 40%;
   max-width: 250px;
@@ -230,9 +225,13 @@ input:focus {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.buttons > *:hover {
+.buttons > *:disabled {
+  opacity: .75;
+}
+
+.buttons > *:not(:disabled):hover {
   background-color: #fff;
-  color: #000;
+  color: #1c1409;
 }
 
 #noShipping {
