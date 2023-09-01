@@ -1,4 +1,255 @@
+:root {
+  --off-white: #FFF5EE99;
+}
+
+@font-face {
+  font-family: anton;
+  src: url(/fonts/anton-regular.ttf);
+}
+
+@font-face {
+  font-family: Lato;
+  src: url(/fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: FiraSans;
+  src: url(/fonts/FiraSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: Quicksand;
+  src: url(/fonts/Quicksand-Regular.ttf);
+}
+
+@font-face {
+  font-family: PermanentMarker;
+  src: url(/fonts/PermanentMarker-Regular.ttf);
+}
+
+@font-face {
+  font-family: IndieFlower;
+  src: url(/fonts/IndieFlower-Regular.ttf);
+}
+
+@font-face {
+  font-family: GochiHand;
+  src: url(/fonts/GochiHand-Regular.ttf);
+}
+
 body {
   margin: 0;
+  background-color: #cdbbad;
+  font-family: Quicksand, sans-serif;
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+}
+
+h1 {
+  font-family: Quicksand, sans-serif;
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hide {
+  display: none;
+}
+
+a {
+  color: #000;
+}
+
+/*
+  General sections
+ */
+
+section {
+  display: none;
+  flex-grow: 1;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+  padding: 0 1rem 2rem 1rem;
+}
+
+section.active {
+  display: flex;
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+/*
+  Image blocks
+ */
+
+#one {
+  gap: 2rem;
+}
+
+.img {
+  background-color: #EFEBE9;
+  background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  font-family: IndieFlower, sans-serif;
+  margin: 0 12vw;
+  text-align: center;
+  transition: all .2s;
+}
+
+.img:hover {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.img img {
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  width: calc(100% - 12px);
+  margin: 6px;
+}
+
+.img h2 {
+  margin: 0.5rem 0 .8rem 0;
+}
+
+.img div {
+  font-size: 1.25rem;
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  Select option block
+ */
+
+ul {
+  padding: 1rem;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+ul li {
+  background: var(--off-white);
+  border: 1px solid #000;
+  border-radius: 2rem;
+  padding: .5rem 1rem;
+  width: 7rem;
+}
+
+ul li.selected {
   background-color: #000;
+  color: #fff;
+}
+
+/*
+  Count
+ */
+
+#count-box {
+  align-items: center;
+  border: 1px solid #000;
+  display: flex;
+  width: 7rem;
+  justify-content: space-between;
+  margin: 1rem auto;
+  padding: .5rem 0;
+  font-size: 1.1rem;
+  background-color: var(--off-white);
+}
+
+#count-box button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 2rem;
+  font-size: 1rem;
+}
+
+/*
+  Normal input
+ */
+
+input {
+  background: var(--off-white);
+  border: none;
+  font-size: 1rem;
+  font-family: Quicksand, sans-serif;
+  margin: 1rem;
+  padding: .7rem 1rem;
+  text-align: center;
+  width: 80%;
+  max-width: 500px;
+  transition: all .2s;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/*
+  Buttons
+ */
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buttons button {
+  background: #1c1409;
+  color: #fff;
+  border: 1px solid #000;
+  font-size: 1rem;
+  width: 40%;
+  max-width: 250px;
+  padding: .7rem;
+  transition: all .2s;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.buttons button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+#noShipping {
+  width: 80%;
+  margin: 1rem 0;
+}
+
+@media screen and (min-width: 777px) {
+  h1 {
+    margin-top: 5vh;
+  }
+
+  #one {
+    flex-direction: row;
+  }
+
+  .img {
+    margin: auto;
+    width: 35vw;
+  }
+
+  .buttons {
+    justify-content: center;
+    gap: 3rem;
+  }
 }
