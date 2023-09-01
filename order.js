@@ -103,7 +103,7 @@ const toBase64 = file => new Promise((resolve, reject) => {
 
 $('five').addEventListener('submit', async e => {
   e.preventDefault();
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzB5oy3b1EHC2GsBwSbf9IGKKO1SbsVv1fjZf-2zbqMR9NUpBB8GPRBM2ZLoQZuFrUR/exec';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx6ff6uutEOsY9T9lOFJAhcVVNsMfLerDYxKxlExrOHk1xiG_mk_MG48hi6PHJ2AqTH/exec';
   let requestBody = new FormData();
   requestBody.set('color', $form.dataset.color);
   requestBody.set('size', document.querySelector('#size .selected').innerText);
@@ -116,12 +116,17 @@ $('five').addEventListener('submit', async e => {
   requestBody.set('address3', $('address3').value);
   // requestBody.set('confirmation', (await toBase64($('confirmation').files[0])).toString());
   requestBody.set('confirmation', '123');
-  console.log(requestBody)
+  console.log(requestBody);
   fetch(scriptURL, { method: 'POST', body: requestBody})
     .then(response => {
+      $('error').style.display = 'none';
       console.log('Success!', response);
+      $('five').classList.remove('active');
+      $('confirmationPage').classList.add('active');
     })
     .catch(error => {
+      $('error').innerText = 'Error: ' + error.message;
+      $('error').style.display = 'block';
       console.log('Error!', error.message);
     });
 });
