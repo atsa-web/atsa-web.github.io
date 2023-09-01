@@ -106,7 +106,7 @@ $('five').addEventListener('submit', async e => {
   $order.disabled = true;
   $order.innerText = 'Placing...';
   e.preventDefault();
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzt_7sU0_Td0CT8yoxPQF0-PUyZSYuKuBp5bvDtim4w4xdsoZftYy-uYDeeVdCLAh1X/exec';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwTXw5-WZncPhSUEjgNJe65bCPbWNuwWPXY3yOm3kwxytnqZd7WVwbavCZxJJ_zP9qW/exec';
   let requestBody = new FormData();
   if (!$form.dataset.color) {
     alert('There is no sweatshirt color chosen! Please refresh the page and try again.');
