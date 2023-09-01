@@ -96,7 +96,7 @@ $('back4').addEventListener('click', e => {
 
 $('order').addEventListener('click', e => {
   e.preventDefault();
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzGPGr0c96QdIKm5n_L0Tc-myQoMJXVxXksw8Mq7Z8/dev';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxnlcVuSxtIijViM9KyjuHdXCQ8vcG8OW1fivF_aXyKPiGkCccbiMfxfc58KraPP5aZ/exec';
   let requestBody = new FormData($form);
   requestBody.set('color', $form.dataset.color);
   requestBody.set('size', document.querySelector('#size .selected').innerText);
