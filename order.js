@@ -142,6 +142,7 @@ $('five').addEventListener('submit', async e => {
       $('confirmationPage').classList.add('active');
     })
     .catch(error => {
+      umami.track('Error occurred', { error: error.message });
       $order.disabled = false;
       $order.innerText = 'Place my order!';
       $('error').innerText = 'Error: ' + error.message;
