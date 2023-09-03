@@ -4,12 +4,14 @@ const $form = $('form');
 const $order = $('order');
 
 $('sand').addEventListener('click', () => {
+  umami.track('Clicked sand');
   $('form').dataset.color = 'sand';
   $('one').classList.remove('active');
   $('two').classList.add('active');
 });
 
 $('chocolate').addEventListener('click', () => {
+  umami.track('Clicked chocolate');
   $('form').dataset.color = 'chocolate';
   $('one').classList.remove('active');
   $('two').classList.add('active');
@@ -57,6 +59,7 @@ $('back2').addEventListener('click', e => {
 
 $('three').addEventListener('submit', e => {
   e.preventDefault();
+  umami.track('Filled personal details', { name: $('name').value, email: $('email').value });
   $('three').classList.remove('active');
   $('four').classList.add('active');
 });
@@ -103,9 +106,10 @@ const toBase64 = file => new Promise((resolve, reject) => {
 });
 
 $('five').addEventListener('submit', async e => {
+  e.preventDefault();
   $order.disabled = true;
   $order.innerText = 'Placing...';
-  e.preventDefault();
+  umami.track('Placed order!', { name: $('name').value, email: $('email').value });
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwTXw5-WZncPhSUEjgNJe65bCPbWNuwWPXY3yOm3kwxytnqZd7WVwbavCZxJJ_zP9qW/exec';
   let requestBody = new FormData();
   if (!$form.dataset.color) {
