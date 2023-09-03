@@ -3,6 +3,8 @@ const $count = $('count');
 const $form = $('form');
 const $order = $('order');
 
+$('cost').innerText = new Date().getDate() > 2 ? '25' : '22';
+
 $('sand').addEventListener('click', () => {
   $('form').dataset.color = 'sand';
   $('one').classList.remove('active');
