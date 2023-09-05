@@ -4,14 +4,14 @@ const $form = $('form');
 const $order = $('order');
 
 $('sand').addEventListener('click', () => {
-  if (umami) umami.track('Clicked sand');
+  if (typeof umami !== 'undefined') umami.track('Clicked sand');
   $('form').dataset.color = 'sand';
   $('one').classList.remove('active');
   $('two').classList.add('active');
 });
 
 $('chocolate').addEventListener('click', () => {
-  if (umami) umami.track('Clicked chocolate');
+  if (typeof umami !== 'undefined') umami.track('Clicked chocolate');
   $('form').dataset.color = 'chocolate';
   $('one').classList.remove('active');
   $('two').classList.add('active');
@@ -59,7 +59,7 @@ $('back2').addEventListener('click', e => {
 
 $('three').addEventListener('submit', e => {
   e.preventDefault();
-  if (umami) umami.track('Filled personal details', { name: $('name').value, email: $('email').value });
+  if (typeof umami !== 'undefined') umami.track('Filled personal details', { name: $('name').value, email: $('email').value });
   $('three').classList.remove('active');
   $('four').classList.add('active');
 });
@@ -109,7 +109,7 @@ $('five').addEventListener('submit', async e => {
   e.preventDefault();
   $order.disabled = true;
   $order.innerText = 'Placing...';
-  if (umami) umami.track('Placed order!', { name: $('name').value, email: $('email').value });
+  if (typeof umami !== 'undefined') umami.track('Placed order!', { name: $('name').value, email: $('email').value });
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwTXw5-WZncPhSUEjgNJe65bCPbWNuwWPXY3yOm3kwxytnqZd7WVwbavCZxJJ_zP9qW/exec';
   let requestBody = new FormData();
   if (!$form.dataset.color) {
@@ -142,7 +142,7 @@ $('five').addEventListener('submit', async e => {
       $('confirmationPage').classList.add('active');
     })
     .catch(error => {
-      if (umami) umami.track('Error occurred', { error: error.message });
+      if (typeof umami !== 'undefined') umami.track('Error occurred', { error: error.message });
       $order.disabled = false;
       $order.innerText = 'Place my order!';
       $('error').innerText = 'Error: ' + error.message;
