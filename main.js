@@ -1,8 +1,8 @@
 const $ = id => document.getElementById(id);
 
-const LILY = 2;
-const SURROUNDING_TEXT = 3;
-const INTERESTED = 5;
+const LILY = 1;
+const SURROUNDING_TEXT = 2;
+const INTERESTED = 3;
 
 function getIntroOpacity() {
   return Math.max(0, 1 - window.scrollY / (window.innerHeight * 2));
@@ -10,7 +10,7 @@ function getIntroOpacity() {
 
 function getOpacity(start) {
   start *= window.innerHeight;
-  const maxesAt = start + window.innerHeight * 2;
+  const maxesAt = start + window.innerHeight;
   if (window.scrollY > start)
     return Math.max(0, Math.min(maxesAt, window.scrollY - start) / maxesAt);
   else

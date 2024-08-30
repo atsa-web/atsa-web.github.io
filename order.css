@@ -48,7 +48,7 @@ body {
   transform: translateX(-50%);
   top: 20vh;
   left: 50vw;
-  z-index: 10;
+  z-index: 11;
 }
 
 #lily {
@@ -58,6 +58,7 @@ body {
   max-width: 80vw;
   left: 50vw;
   transform: translateX(-50%);
+  z-index: 10;
 }
 
 #est2022 {
@@ -66,6 +67,7 @@ body {
   top: 71vh;
   left: 50vw;
   transform: translateX(-50%);
+  z-index: 11;
 }
 
 #interested {
@@ -112,7 +114,7 @@ body {
 }
 
 #one {
-  height: 1100vh;
+  height: 800vh;
 }
 
 #form {
