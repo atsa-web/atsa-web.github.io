@@ -1,16 +1,16 @@
 const $ = id => document.getElementById(id);
 
-const LILY = 1;
-const SURROUNDING_TEXT = 2;
-const INTERESTED = 3;
+const LILY = .5;
+const SURROUNDING_TEXT = 1.5;
+const INTERESTED = 3.5;
 
 function getIntroOpacity() {
-  return Math.max(0, 1 - window.scrollY / (window.innerHeight * 2));
+  return Math.max(0, 1 - window.scrollY / window.innerHeight * 2);
 }
 
 function getOpacity(start) {
   start *= window.innerHeight;
-  const maxesAt = start + window.innerHeight;
+  const maxesAt = start + window.innerHeight / 2;
   if (window.scrollY > start)
     return Math.max(0, Math.min(maxesAt, window.scrollY - start) / maxesAt);
   else
@@ -37,44 +37,45 @@ function getEstPosition() {
 
 const $intro = $("intro");
 const $scroll = $("scroll");
-const $iceage = $("iceage");
+const introBg = $("introBg");
+const $bg = $("bg");
 const $text = $("text");
 const $lily = $("lily");
 const $est2022 = $("est2022");
 const $interested = $("interested");
 $intro.style.opacity = getIntroOpacity().toString();
 $scroll.style.opacity = getIntroOpacity().toString();
-$iceage.style.opacity = getIntroOpacity().toString();
+introBg.style.opacity = getIntroOpacity().toString();
+$bg.style.opacity = getOpacity(LILY).toString();
 $text.style.opacity = getOpacity(SURROUNDING_TEXT).toString();
 $lily.style.opacity = getOpacity(LILY).toString();
-// $("bg").style.opacity = getOpacity(LILY).toString();
 $est2022.style.opacity = getOpacity(SURROUNDING_TEXT).toString();
-$interested.style.opacity = getOpacity(INTERESTED).toString();
+$interested.style.opacity = ((window.scrollY < window.innerHeight * INTERESTED) ? 0 : 1).toString();
 
 window.addEventListener("scroll", () => {
   $intro.style.opacity = getIntroOpacity().toString();
   $scroll.style.opacity = getIntroOpacity().toString();
-  $iceage.style.opacity = getIntroOpacity().toString();
+  introBg.style.opacity = getIntroOpacity().toString();
+  $bg.style.opacity = getOpacity(LILY).toString();
   $text.style.opacity = getOpacity(SURROUNDING_TEXT).toString();
   $text.style.transform = `translate(-50%, -${getAgaramPosition()}vh)`;
   $lily.style.opacity = getOpacity(LILY).toString();
-  // $("bg").style.opacity = getOpacity(LILY).toString();
   $est2022.style.opacity = getOpacity(SURROUNDING_TEXT).toString();
   $est2022.style.transform = `translate(-50%, ${getEstPosition()}vh)`;
-  $interested.style.opacity = getOpacity(INTERESTED).toString();
+  $interested.style.opacity = ((window.scrollY < window.innerHeight * INTERESTED) ? 0 : 1).toString();
 });
 
 $interested.addEventListener("click", () => {
   $("one").classList.remove("active");
   $("two").classList.add("active");
-  $iceage.style.display = "none";
+  introBg.style.display = "none";
 });
 
 $("back").addEventListener("click", e => {
   e.preventDefault();
   $("two").classList.remove("active");
   $("one").classList.add("active");
-  $iceage.style.display = "block";
+  introBg.style.display = "block";
 });
 
 $("proceed").addEventListener("click", e => {
