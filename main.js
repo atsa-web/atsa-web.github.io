@@ -71,6 +71,28 @@ $interested.addEventListener("click", () => {
   introBg.style.display = "none";
 });
 
+// Screen two
+
+const $count = $('count');
+
+document.querySelectorAll('ul li').forEach(elem => {
+  elem.addEventListener('click', e => {
+    document.querySelectorAll('ul li').forEach(li => li.classList.remove('selected'));
+    e.target.classList.add('selected');
+  });
+});
+
+$('less').addEventListener('click', e => {
+  e.preventDefault();
+  if (parseInt($count.innerText) > 1)
+    $count.innerText = (parseInt($count.innerText) - 1).toString();
+});
+
+$('more').addEventListener('click', e => {
+  e.preventDefault();
+  $count.innerText = (parseInt($count.innerText) + 1).toString();
+});
+
 $("back").addEventListener("click", e => {
   e.preventDefault();
   $("two").classList.remove("active");

@@ -120,6 +120,10 @@ body {
   height: 260vh;
 }
 
+#two {
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+
 #form {
   display: flex;
   flex-direction: column;
@@ -164,6 +168,7 @@ footer a {
 
 h2 {
   margin-bottom: 0;
+  font-family: "IndieFlower", sans-serif;
 }
 
 /*
@@ -180,17 +185,24 @@ ul {
 }
 
 ul li {
-  background: var(--off-white);
-  border: 1px solid #000;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  background-color: #aba;
+  border: 1px solid #010;
   border-radius: 2rem;
+  color: #000;
   cursor: default;
   padding: .5rem 1rem;
   width: 7rem;
   transition: all .2s ease-in;
 }
 
+ul li:hover {
+  background-color: #ddd;
+}
+
 ul li.selected {
-  background-color: #000;
+  background-image: none;
+  background-color: #010;
   color: #fff;
 }
 
@@ -201,13 +213,14 @@ ul li.selected {
 #count-box {
   align-items: center;
   border: 1px solid #000;
+  color: #000;
   display: flex;
   width: 7rem;
   justify-content: space-between;
   margin: 1rem auto;
   padding: .5rem 0;
   font-size: 1.1rem;
-  background-color: var(--off-white);
+  background-color: #aba;
 }
 
 #count-box button {
@@ -263,7 +276,7 @@ input:hover, input:focus {
 
 .buttons > * {
   appearance: none;
-  background: #95B3AF;
+  background: #aba;
   color: #000;
   cursor: default;
   border: 1px solid #1c1409;
@@ -282,7 +295,7 @@ input:hover, input:focus {
 }
 
 .buttons > *:not(:disabled):hover {
-  background-color: #fff;
+  background-color: #ddd;
   color: #1c1409;
 }
 
