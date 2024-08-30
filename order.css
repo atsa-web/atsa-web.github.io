@@ -23,7 +23,7 @@ body {
 #intro {
   font-family: "Merienda", cursive;
   font-optical-sizing: auto;
-  font-size: min(8rem, 20vw);
+  font-size: min(8rem, 17vw);
   font-style: italic;
   position: fixed;
   top: 0;
@@ -36,8 +36,8 @@ body {
 }
 
 #scroll {
-  font-family: "Quicksand", sans-serif;
-  font-size: 1.25rem;
+  font-family: "IndieFlower", sans-serif;
+  font-size: 1.4rem;
   position: fixed;
   bottom: 2rem;
   left: 50vw;
