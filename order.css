@@ -23,13 +23,14 @@ body {
 #intro {
   font-family: "Merienda", cursive;
   font-optical-sizing: auto;
-  font-size: min(10rem, 20vw);
+  font-size: min(8rem, 20vw);
   font-style: italic;
   position: fixed;
-  top: 45vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  width: 90%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 0 5vw;
 }
 
 #scroll {
@@ -114,7 +115,7 @@ body {
 }
 
 #one {
-  height: 460vh;
+  height: 310vh;
 }
 
 #form {
