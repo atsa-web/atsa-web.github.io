@@ -31,6 +31,7 @@ body {
   align-items: center;
   justify-content: center;
   margin: auto;
+  transform: translateY(-2rem);
   height: 100vh;
   width: 90vw;
 }
@@ -120,7 +121,7 @@ body {
   height: 260vh;
 }
 
-#two {
+#two, #three {
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 

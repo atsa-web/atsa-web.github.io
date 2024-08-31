@@ -105,3 +105,18 @@ $("proceed").addEventListener("click", e => {
   $("two").classList.remove("active");
   $("three").classList.add("active");
 });
+
+// Screen three
+
+$('back2').addEventListener('click', e => {
+  e.preventDefault();
+  $('three').classList.remove('active');
+  $('two').classList.add('active');
+});
+
+$('three').addEventListener('submit', e => {
+  e.preventDefault();
+  if (typeof umami !== 'undefined') umami.track('Filled personal details', { name: $('name').value, email: $('email').value });
+  $('three').classList.remove('active');
+  $('four').classList.add('active');
+});
