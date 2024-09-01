@@ -127,7 +127,7 @@ $three.addEventListener("submit", e => {
 
   let requestBody = new FormData();
   requestBody.set("size", document.querySelector("#size .selected").innerText);
-  requestBody.set("number", $("count").innerText);
+  requestBody.set("count", $("count").innerText);
   requestBody.set("name", $name.value);
   requestBody.set("email", $email.value);
   requestBody.set("phone", $phone.value);
