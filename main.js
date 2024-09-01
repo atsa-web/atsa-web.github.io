@@ -112,20 +112,25 @@ $('back2').addEventListener('click', e => {
 
 const $submit = $("submit");
 const $error = $("error");
+const $name = $("name");
+const $email = $("email");
+const $phone = $("phone");
 
 $three.addEventListener("submit", e => {
   e.preventDefault();
   $submit.disabled = true;
   $submit.innerText = "Submitting...";
 
-  if (typeof umami !== "undefined") umami.track('Tracked interest!', { name: $('name').value });
+  if (typeof umami !== "undefined") umami.track('Tracked interest!', { name: $name.value, email: $email.value, phone: $phone.value });
 
   const scriptURL = "https://script.google.com/macros/s/AKfycbwgarcin585RL5SeEE4f_sd8IxtfGA8aOnW9vkBX0KaCuimh5LBJ1NpAVKEljc4Qtth/exec";
 
   let requestBody = new FormData();
   requestBody.set("size", document.querySelector("#size .selected").innerText);
   requestBody.set("number", $("count").innerText);
-  requestBody.set("name", $("name").value);
+  requestBody.set("name", $name.value);
+  requestBody.set("email", $email.value);
+  requestBody.set("phone", $phone.value);
   console.log("Submitting", requestBody);
 
   fetch(scriptURL,
