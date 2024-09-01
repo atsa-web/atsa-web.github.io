@@ -118,13 +118,7 @@ $three.addEventListener("submit", e => {
   $submit.disabled = true;
   $submit.innerText = "Submitting...";
 
-  $error.style.display = "block";
-  $error.innerText = "Starting umami";
-  $error.innerText = `typeof umami = ${typeof umami}`;
-
-  if (typeof umami !== "undefined") umami.track('Placed order!', { name: $('name').value, email: $('email').value });
-
-  $error.innerText = "Passed umami";
+  if (typeof umami !== "undefined") umami.track('Tracked interest!', { name: $('name').value });
 
   const scriptURL = "https://script.google.com/macros/s/AKfycbwgarcin585RL5SeEE4f_sd8IxtfGA8aOnW9vkBX0KaCuimh5LBJ1NpAVKEljc4Qtth/exec";
 
@@ -132,7 +126,6 @@ $three.addEventListener("submit", e => {
   requestBody.set("size", document.querySelector("#size .selected").innerText);
   requestBody.set("number", $("count").innerText);
   requestBody.set("name", $("name").value);
-  $error.innerText = JSON.stringify(requestBody);
   console.log("Submitting", requestBody);
 
   fetch(scriptURL,
