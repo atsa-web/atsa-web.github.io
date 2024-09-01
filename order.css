@@ -1,5 +1,5 @@
 :root {
-  --off-white: #DDF5EE99;
+  --off-white: #aba;
   --forest-green: #122620;
 }
 
@@ -150,7 +150,7 @@ footer a {
 h2 {
   margin-bottom: 0;
   font-family: Quicksand, sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 /*
@@ -168,11 +168,12 @@ ul {
 
 ul li {
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-  background-color: #aba;
+  background-color: var(--off-white);
   border: 1px solid #010;
   border-radius: 2rem;
   color: #000;
   cursor: default;
+  font-family: Quicksand, sans-serif;
   padding: .5rem 1rem;
   width: 7rem;
   transition: all .2s ease-in;
@@ -202,7 +203,7 @@ ul li.selected {
   margin: 1rem auto;
   padding: .5rem 0;
   font-size: 1.1rem;
-  background-color: #aba;
+  background-color: var(--off-white);
 }
 
 #count-box button {
@@ -258,14 +259,15 @@ input:hover, input:focus {
 
 .buttons > * {
   appearance: none;
-  background: #aba;
+  background: var(--off-white);
+  box-sizing: content-box;
   color: #000;
   cursor: default;
   border: 1px solid #1c1409;
   font-family: Quicksand, sans-serif;
-  font-size: 1rem;
+  font-size: .9rem;
   font-weight: normal !important;
-  width: 40%;
+  width: 37%;
   max-width: 250px;
   padding: .7rem;
   transition: all .2s;
