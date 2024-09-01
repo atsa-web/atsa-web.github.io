@@ -242,7 +242,7 @@ input:hover, input:focus {
 
 #error {
   border: 2px dashed #B71C1C;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   display: none;
   padding: .5rem;
   margin: 0 auto;

@@ -120,6 +120,7 @@ $three.addEventListener("submit", e => {
 
   $error.style.display = "block";
   $error.innerText = "Starting umami";
+  $error.innerText = `typeof umami = ${typeof umami}`;
 
   if (typeof umami !== "undefined") umami.track('Placed order!', { name: $('name').value, email: $('email').value });
 
