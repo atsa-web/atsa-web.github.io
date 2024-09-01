@@ -16,7 +16,7 @@
 body {
   margin: 0;
   background-color: var(--forest-green);
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  /*background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");*/
   background-attachment: fixed;
   font-family: kudryashev-d-contrast, sans-serif;
   color: #fff;
@@ -167,7 +167,6 @@ ul {
 }
 
 ul li {
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   background-color: var(--off-white);
   border: 1px solid #010;
   border-radius: 2rem;
