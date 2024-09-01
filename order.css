@@ -16,6 +16,8 @@
 body {
   margin: 0;
   background-color: var(--forest-green);
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  background-attachment: fixed;
   font-family: kudryashev-d-contrast, sans-serif;
   color: #fff;
 }
@@ -99,30 +101,8 @@ body {
   color: var(--forest-green);
 }
 
-#bg {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-  background-attachment: fixed;
-  z-index: -1;
-}
-
-#introBg {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
-  background-attachment: fixed;
-  z-index: -1;
-}
-
 #one {
   height: 260vh;
-}
-
-#two, #three {
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
 #form {
@@ -169,7 +149,8 @@ footer a {
 
 h2 {
   margin-bottom: 0;
-  font-family: "IndieFlower", sans-serif;
+  font-family: Quicksand, sans-serif;
+  font-size: 1.4rem;
 }
 
 /*

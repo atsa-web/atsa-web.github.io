@@ -17,8 +17,6 @@
 </head>
 <body>
 <main id="form">
-  <div id="introBg"></div>
-  <div id="bg"></div>
   <section id="one" class="active section">
     <div id="intro">
       Get the latest
@@ -38,7 +36,7 @@
       <h2>We're working on T-Shirts with the design you just saw on the previous page!</h2>
     </div>
     <div>
-      <h2>What size do you want?</h2>
+      <h2>What size would you want?</h2>
       <ul id="size">
         <li>S (35" - 37")</li>
         <li class="selected">M (38" - 40")</li>
@@ -64,26 +62,28 @@
   <form class="section" id="three">
     <div>
       <h2>We're still finalizing the T-Shirt design, but assessing interest for an initial order.</h2>
+      <h2 class="normalFont">Estimated price: $14/T-Shirt</h2>
     </div>
     <div>
       <h2>What is your name?</h2>
       <input type="text" id="name" required>
     </div>
+    <p id="error"></p>
     <div class="buttons">
       <div id="back2">Back</div>
-      <button type="submit">Count me in!</button>
+      <button type="submit" id="submit">Count me in!</button>
     </div>
   </form>
   <section id="confirmationPage" class="section">
     <h2>
       Thank you!
       <br><br>
-      Your order has been placed.
+      Your interest has been recorded.
     </h2>
-    <footer>
-      © ATSA, 2023 | Built by <a href="https://cubetastic33.github.io">Aravind</a>
-    </footer>
   </section>
+  <footer>
+    © ATSA, 2024 | Built by <a href="https://cubetastic33.github.io">Aravind</a>
+  </footer>
 </main>
 <script src="main.js"></script>
 </body>
