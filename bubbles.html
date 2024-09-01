@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Order an ATSA T-Shirt!</title>
+  <meta property="og:title" content="Order an ATSA T-Shirt!" />
+  <meta property="og:image" content="/images/agaram_thumbnail.png" />
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:description" content="Get the latest ATSA merch!">
+  <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="order.css">
+  <link rel="stylesheet" href="bubbles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <script async src="https://analytics.umami.is/script.js" data-website-id="633968fc-1c6a-4cd1-8e6a-910aa6c9073e"></script>
+</head>
+<body style="background-image: none">
+<main id="form">
+  <section id="one" class="active section">
+    <div id="intro">
+      Get the latest
+      <br>
+      ATSA
+      <br>
+      merch!
+    </div>
+    <div id="scroll">Scroll Down</div>
+    <img src="images/agaram%20text.svg" alt="Agaram" id="text">
+    <img src="images/fire_lily.svg" alt="Fire Lily" id="lily">
+    <img src="images/est%202022.svg" alt="Est. 2022" id="est2022">
+    <button id="interested">I'm Interested!</button>
+    <section class="sticky">
+      <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+    </section>
+  </section>
+  <section id="two" class="section">
+    <div>
+      <h2>We're working on T-Shirts with the design you just saw on the previous page!</h2>
+    </div>
+    <div>
+      <h2>What size would you want?</h2>
+      <ul id="size">
+        <li>S (35" - 37")</li>
+        <li class="selected">M (38" - 40")</li>
+        <li>L (41" - 43")</li>
+        <li>XL (44" - 46")</li>
+        <li>2XL (47" - 49")</li>
+        <li>3XL (50" - 53")</li>
+      </ul>
+    </div>
+    <div>
+      <h2>How many would you like?</h2>
+      <div id="count-box">
+        <button id="less">-</button>
+        <div id="count">1</div>
+        <button id="more">+</button>
+      </div>
+    </div>
+    <div class="buttons">
+      <button id="back">Back</button>
+      <button id="proceed" data-umami-event="Chose size and count">Proceed</button>
+    </div>
+  </section>
+  <form class="section" id="three">
+    <div>
+      <h2>We're still finalizing the T-Shirt design, but assessing interest for an initial order.</h2>
+      <h2 class="normalFont">Estimated price: $14/T-Shirt</h2>
+    </div>
+    <div>
+      <h2>What is your name?</h2>
+      <input type="text" id="name" required>
+    </div>
+    <p id="error"></p>
+    <div class="buttons">
+      <div id="back2">Back</div>
+      <button type="submit" id="submit">Count me in!</button>
+    </div>
+  </form>
+  <section id="confirmationPage" class="section">
+    <h2>
+      Thank you!
+      <br><br>
+      Your interest has been recorded.
+    </h2>
+  </section>
+  <footer>
+    © ATSA, 2024 | Built by <a href="https://cubetastic33.github.io">Aravind</a>
+  </footer>
+</main>
+<script src="main.js"></script>
+</body>
+</html>
