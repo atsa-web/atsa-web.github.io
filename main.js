@@ -125,7 +125,9 @@ $three.addEventListener("submit", e => {
   requestBody.set("size", document.querySelector("#size .selected").innerText);
   requestBody.set("number", $("count").innerText);
   requestBody.set("name", $("name").value);
-  console.log(requestBody);
+  $error.innerText = JSON.stringify(requestBody);
+  $error.style.display = "block";
+  console.log("Submitting", requestBody);
 
   fetch(scriptURL,
     {
@@ -135,6 +137,7 @@ $three.addEventListener("submit", e => {
     .then(response => {
       $submit.disabled = false;
       $submit.innerText = "Count me in!";
+      // Hide any errors that were already displayed
       $error.style.display = "none";
       console.log("Success!", response);
       $three.classList.remove("active");
