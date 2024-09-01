@@ -16,8 +16,7 @@
 body {
   margin: 0;
   background-color: var(--forest-green);
-  /*background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");*/
-  /*background-image: url("https://www.transparenttextures.com/patterns/low-contrast-linen.png");*/
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   background-attachment: fixed;
   font-family: Quicksand, sans-serif;
   color: #fff;
