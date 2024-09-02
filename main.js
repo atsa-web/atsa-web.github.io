@@ -136,7 +136,7 @@ $four.addEventListener("submit", e => {
   $submit.disabled = true;
   $submit.innerText = "Submitting...";
 
-  if (typeof umami !== "undefined") umami.track('Tracked interest!', { name: $name.value, email: $email.value, phone: $phone.value });
+  if (typeof umami !== "undefined") umami.track("Submitted form!", { name: $name.value, email: $email.value, phone: $phone.value });
 
   const scriptURL = "https://script.google.com/macros/s/AKfycbwgarcin585RL5SeEE4f_sd8IxtfGA8aOnW9vkBX0KaCuimh5LBJ1NpAVKEljc4Qtth/exec";
 
