@@ -65,7 +65,7 @@ body {
   max-width: 90vw;
   position: fixed;
   transform: translateX(-50%);
-  top: 20vh;
+  top: 16vh;
   left: 50vw;
   z-index: 11;
 }
@@ -73,7 +73,7 @@ body {
 #lily {
   height: 45vh;
   position: fixed;
-  top: 27vh;
+  top: 23vh;
   max-width: 80vw;
   left: 50vw;
   transform: translateX(-50%);
@@ -83,7 +83,7 @@ body {
 #est2022 {
   height: 6vh;
   position: fixed;
-  top: 71vh;
+  top: 67vh;
   left: 50vw;
   transform: translateX(-50%);
   z-index: 11;
@@ -91,7 +91,7 @@ body {
 
 #interested {
   position: fixed;
-  top: 80vh;
+  bottom: 18vh;
   left: 50vw;
   transform: translateX(-50%);
   appearance: none;
