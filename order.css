@@ -242,8 +242,7 @@ ul li.selected {
 }
 
 #count-box div {
-  /*background-color: var(--off-white);*/
-  background-color: #aabbaaa9;
+  background-color: #abaa;
   border-radius: 7px;
   padding: .5rem 1rem;
 }
@@ -252,6 +251,8 @@ ul li.selected {
   background-color: var(--off-white);
   border: none;
   border-radius: 100%;
+  box-sizing: content-box;
+  padding: 0;
   color: #000;
   height: 2rem;
   width: 2rem;
