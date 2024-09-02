@@ -322,6 +322,7 @@ input::placeholder {
   border: 1px solid #1c1409;
   font-family: Quicksand, sans-serif;
   font-size: .9rem;
+  font-weight: normal;
   width: 37%;
   max-width: 250px;
   padding: .7rem;
