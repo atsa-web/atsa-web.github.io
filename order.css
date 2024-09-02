@@ -288,6 +288,7 @@ input:hover, input:focus {
 
 input::placeholder {
   color: #000;
+  opacity: .4;
 }
 
 /*
