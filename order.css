@@ -13,10 +13,16 @@
   src: url(/fonts/IndieFlower-Regular.ttf);
 }
 
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  src: url(/fonts/CormorantGaramond-Italic.ttf);
+}
+
 body {
   margin: 0;
   background-color: var(--forest-green);
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  background-image: url("/images/asfalt-light.png");
   background-attachment: fixed;
   font-family: Quicksand, sans-serif;
   color: #fff;
@@ -39,7 +45,7 @@ body {
 }
 
 #scroll {
-  font-family: "IndieFlower", sans-serif;
+  font-family: IndieFlower, sans-serif;
   font-size: 1.4rem;
   position: fixed;
   bottom: 2rem;
