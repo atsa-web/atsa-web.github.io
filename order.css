@@ -171,7 +171,7 @@ h2 {
 }
 
 /*
-  Page two
+  T-Shirt Preview
  */
 
 #shirt {
@@ -238,7 +238,8 @@ ul li.selected {
 }
 
 #count-box div {
-  background-color: var(--off-white);
+  /*background-color: var(--off-white);*/
+  background-color: #aabbaaa9;
   border-radius: 7px;
   padding: .5rem 1rem;
 }
@@ -247,6 +248,7 @@ ul li.selected {
   background-color: var(--off-white);
   border: none;
   border-radius: 100%;
+  color: #000;
   height: 2rem;
   width: 2rem;
   font-size: 1rem;
