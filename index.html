@@ -35,8 +35,28 @@
   </section>
   <section id="two" class="section">
     <div>
-      <h2>We're working on T-Shirts with the design you just saw on the previous page!</h2>
+      <h2>
+        We're still working on our design, but assessing interest for an initial order of our new T-Shirts.
+      </h2>
+      <h2>
+        This is what it might look like:
+      </h2>
+      <div id="shirt">
+        <img src="/images/t-shirt_design.png" alt="Agaram Design on a T-Shirt">
+      </div>
+      <h2>
+        Disclaimer: The color is not finalized yet!
+      </h2>
+      <h2>Estimated price: $14/T-Shirt</h2>
+      <br>
+      <br>
+      <div class="buttons">
+        <button id="backToOne">Back</button>
+        <button id="proceedToThree" data-umami-event="Saw tentative design">Proceed</button>
+      </div>
     </div>
+  </section>
+  <section id="three" class="section">
     <div>
       <h2>What size would you want?</h2>
       <ul id="size">
@@ -57,15 +77,11 @@
       </div>
     </div>
     <div class="buttons">
-      <button id="back">Back</button>
-      <button id="proceed" data-umami-event="Chose size and count">Proceed</button>
+      <button id="backToTwo">Back</button>
+      <button id="proceedToFour" data-umami-event="Chose size and count">Proceed</button>
     </div>
   </section>
-  <form class="section" id="three">
-    <div>
-      <h2>We're still finalizing the T-Shirt design, but assessing interest for an initial order.</h2>
-      <h2 class="normalFont">Estimated price: $14/T-Shirt</h2>
-    </div>
+  <form id="four" class="section">
     <div>
       <h2>What is your name?</h2>
       <input type="text" id="name" placeholder="First and last name" required>
@@ -80,7 +96,7 @@
     </div>
     <p id="error"></p>
     <div class="buttons">
-      <div id="back2">Back</div>
+      <div id="backToThree">Back</div>
       <button type="submit" id="submit">Count me in!</button>
     </div>
   </form>

@@ -62,6 +62,7 @@ window.addEventListener("scroll", () => {
 const $one = $("one");
 const $two = $("two");
 const $three = $("three");
+const $four = $("four");
 
 $interested.addEventListener("click", () => {
   $one.classList.remove("active");
@@ -70,33 +71,13 @@ $interested.addEventListener("click", () => {
 
 // Screen two
 
-const $count = $("count");
-
-document.querySelectorAll('ul li').forEach(elem => {
-  elem.addEventListener('click', e => {
-    document.querySelectorAll('ul li').forEach(li => li.classList.remove('selected'));
-    e.target.classList.add('selected');
-  });
-});
-
-$('less').addEventListener('click', e => {
-  e.preventDefault();
-  if (parseInt($count.innerText) > 1)
-    $count.innerText = (parseInt($count.innerText) - 1).toString();
-});
-
-$('more').addEventListener('click', e => {
-  e.preventDefault();
-  $count.innerText = (parseInt($count.innerText) + 1).toString();
-});
-
-$("back").addEventListener("click", e => {
+$("backToOne").addEventListener("click", e => {
   e.preventDefault();
   $two.classList.remove("active");
   $one.classList.add("active");
 });
 
-$("proceed").addEventListener("click", e => {
+$("proceedToThree").addEventListener("click", e => {
   e.preventDefault();
   $two.classList.remove("active");
   $three.classList.add("active");
@@ -104,10 +85,44 @@ $("proceed").addEventListener("click", e => {
 
 // Screen three
 
-$('back2').addEventListener('click', e => {
+const $count = $("count");
+
+document.querySelectorAll("ul li").forEach(elem => {
+  elem.addEventListener("click", e => {
+    document.querySelectorAll("ul li").forEach(li => li.classList.remove("selected"));
+    e.target.classList.add("selected");
+  });
+});
+
+$("less").addEventListener("click", e => {
   e.preventDefault();
-  $('three').classList.remove('active');
-  $('two').classList.add('active');
+  if (parseInt($count.innerText) > 1)
+    $count.innerText = (parseInt($count.innerText) - 1).toString();
+});
+
+$("more").addEventListener("click", e => {
+  e.preventDefault();
+  $count.innerText = (parseInt($count.innerText) + 1).toString();
+});
+
+$("backToTwo").addEventListener("click", e => {
+  e.preventDefault();
+  $three.classList.remove("active");
+  $two.classList.add("active");
+});
+
+$("proceedToFour").addEventListener("click", e => {
+  e.preventDefault();
+  $three.classList.remove("active");
+  $four.classList.add("active");
+});
+
+// Screen four
+
+$("backToThree").addEventListener("click", e => {
+  e.preventDefault();
+  $four.classList.remove("active");
+  $three.classList.add("active");
 });
 
 const $submit = $("submit");
@@ -116,7 +131,7 @@ const $name = $("name");
 const $email = $("email");
 const $phone = $("phone");
 
-$three.addEventListener("submit", e => {
+$four.addEventListener("submit", e => {
   e.preventDefault();
   $submit.disabled = true;
   $submit.innerText = "Submitting...";
@@ -144,7 +159,7 @@ $three.addEventListener("submit", e => {
       // Hide any errors that were already displayed
       $error.style.display = "none";
       console.log("Success!", response);
-      $three.classList.remove("active");
+      $four.classList.remove("active");
       $("confirmationPage").classList.add("active");
     })
     .catch(error => {
