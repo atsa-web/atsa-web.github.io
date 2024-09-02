@@ -5,7 +5,14 @@
 
 @font-face {
   font-family: Quicksand;
+  font-weight: normal;
   src: url(/fonts/Quicksand-Regular.ttf);
+}
+
+@font-face {
+  font-family: Quicksand;
+  font-weight: bold;
+  src: url(/fonts/Quicksand-Bold.ttf);
 }
 
 @font-face {
@@ -92,9 +99,7 @@ body {
   color: #fff;
   cursor: default;
   border: 3px solid #fff;
-  font-family: Quicksand, sans-serif;
   font-size: 1rem;
-  font-weight: bold !important;
   width: 40%;
   max-width: 250px;
   padding: .7rem;
@@ -155,7 +160,7 @@ footer a {
 
 h2 {
   margin-bottom: 0;
-  font-family: Quicksand, sans-serif;
+  font-weight: normal;
   font-size: 1.4rem;
 }
 
@@ -170,7 +175,7 @@ h2 {
  */
 
 #shirt {
-  background-color: #efe4;
+  background-color: #efffef66;
   border-radius: 20px;
   width: min-content;
   margin: 2rem auto;
@@ -223,23 +228,32 @@ ul li.selected {
 
 #count-box {
   align-items: center;
-  border: 1px solid #000;
   color: #000;
   display: flex;
-  width: 7rem;
-  justify-content: space-between;
+  gap: .5rem;
+  justify-content: center;
   margin: 1rem auto;
   padding: .5rem 0;
   font-size: 1.1rem;
+}
+
+#count-box div {
   background-color: var(--off-white);
+  border-radius: 7px;
+  padding: .5rem 1rem;
 }
 
 #count-box button {
-  background: transparent;
+  background-color: var(--off-white);
   border: none;
-  cursor: pointer;
+  border-radius: 100%;
+  height: 2rem;
   width: 2rem;
   font-size: 1rem;
+}
+
+#count-box button:hover {
+  background-color: #fff;
 }
 
 /*
@@ -249,6 +263,7 @@ ul li.selected {
 input {
   background: var(--off-white);
   border: none;
+  border-radius: 7px;
   font-size: 1rem;
   font-family: Quicksand, sans-serif;
   margin: 1rem;
@@ -288,13 +303,13 @@ input:hover, input:focus {
 .buttons > * {
   appearance: none;
   background: var(--off-white);
+  border-radius: 7px;
   box-sizing: content-box;
   color: #000;
   cursor: default;
   border: 1px solid #1c1409;
   font-family: Quicksand, sans-serif;
   font-size: .9rem;
-  font-weight: normal !important;
   width: 37%;
   max-width: 250px;
   padding: .7rem;
@@ -307,7 +322,7 @@ input:hover, input:focus {
 }
 
 .buttons > *:not(:disabled):hover {
-  background-color: #ddd;
+  background-color: #fff;
   color: #1c1409;
 }
 
