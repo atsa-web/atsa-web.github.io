@@ -155,7 +155,8 @@ footer a {
   flex-grow: 1;
   flex-direction: column;
   text-align: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 8vh;
   padding: 0 1rem 2rem 1rem;
 }
 
